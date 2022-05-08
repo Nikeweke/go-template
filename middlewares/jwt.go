@@ -2,7 +2,7 @@ package middlewares
 
 import (
 	"github.com/labstack/echo/v4"
-	"sturm/vars"
+	"go-template/vars"
 	echoMiddleware "github.com/labstack/echo/v4/middleware"
 )
 

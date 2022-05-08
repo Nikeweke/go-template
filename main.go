@@ -5,9 +5,9 @@ import (
 	"log"
 	"flag"
 
-	// "sturm/db/mysql"
-	"sturm/vars"
-	"sturm/services/utils"
+	// "go-template/db/mysql"
+	"go-template/vars"
+	"go-template/services/utils"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"

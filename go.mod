@@ -1,4 +1,4 @@
-module sturm
+module go-template
 
 go 1.17
 

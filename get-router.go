@@ -3,8 +3,8 @@ package main
 import (
 	// "net/http"
 
-	"sturm/middlewares"
-	hd "sturm/handlers"
+	"go-template/middlewares"
+	hd "go-template/handlers"
 
 	echoMiddleware "github.com/labstack/echo/v4/middleware"
 	"github.com/labstack/echo/v4"

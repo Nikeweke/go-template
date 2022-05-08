@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"sturm/vars"
+	"go-template/vars"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

@@ -6,7 +6,7 @@
 ### Quick launch
 
 ```sh
-# build and run app
+# build and run app (auto download deps)
 > ./scripts/run.bat
 
 # bundle prod app into folder 
