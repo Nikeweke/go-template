@@ -1,7 +1,6 @@
-# Sturm - golang ready-to-go template 
+# Golang ready-to-go template 
 
 > based on [`echo`](https://echo.labstack.com/guide/) router
-
 
 
 ### Quick launch
@@ -13,6 +12,7 @@
 # bundle prod app into folder 
 > ./scripts/release.bat
 ```
+<br />
 
 
 ### Golang migrate  
