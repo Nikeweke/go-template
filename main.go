@@ -20,7 +20,7 @@ func main() {
 	flag.Parse()
 
 	SetupConfigFromEnv()	
-	// mysql.InitDB()
+	// mysql.InitDB() // uncomment when db is exist
 
 	router := GetRouter() // router.go
 	HttpServer(router, *port)
