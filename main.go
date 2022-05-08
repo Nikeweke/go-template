@@ -1,0 +1,54 @@
+package main 
+
+import (
+	"fmt"
+	"log"
+	"flag"
+
+	// "sturm/db/mysql"
+	"sturm/vars"
+	"sturm/services/utils"
+
+	"github.com/joho/godotenv"
+	"github.com/labstack/echo/v4"
+	"github.com/kelseyhightower/envconfig"
+)
+
+
+func main() {
+	port := flag.String("port", "8000", "app port")
+	flag.Parse()
+
+	SetupConfigFromEnv()	
+	// mysql.InitDB()
+
+	router := GetRouter() // router.go
+	HttpServer(router, *port)
+}
+
+func SetupConfigFromEnv() {
+	// load env file 
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	// load env variables into struct 
+	envsPrefix := ""
+	err = envconfig.Process(envsPrefix, &vars.Config)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+
+	fmt.Println("=====> Env file, Config setup: success")
+}
+
+func HttpServer(r *echo.Echo, port string) {
+	externalIp, _ := utils.ExternalIP()
+	logLine := fmt.Sprintf(
+		"HTTP-server is working on \n http://localhost:%s \n http://%s:%s",
+		port, externalIp, port,
+	)
+	fmt.Println(logLine, "\n")
+	r.Logger.Fatal(r.Start(":" + port))
+}
