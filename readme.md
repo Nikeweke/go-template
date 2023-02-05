@@ -10,7 +10,7 @@
 > ./scripts/run.bat
 
 # bundle prod app into folder 
-> ./scripts/release.bat
+> ./scripts/build.bat
 ```
 <br />
 
