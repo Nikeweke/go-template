@@ -40,13 +40,13 @@ func SetupConfigFromEnv() {
 		log.Fatal(err.Error())
 	}
 
-	fmt.Println("=====> Env file, Config setup: success")
+	fmt.Println("=====> Env file setup: success")
 }
 
 func HttpServer(r *echo.Echo, port string) {
 	externalIp, _ := utils.ExternalIP()
 	logLine := fmt.Sprintf(
-		"HTTP-server is working on \n http://localhost:%s \n http://%s:%s",
+		"=====> HTTP-server on: \n http://localhost:%s \n http://%s:%s",
 		port, externalIp, port,
 	)
 	fmt.Println(logLine, "\n")

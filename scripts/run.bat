@@ -3,6 +3,8 @@ SETLOCAL
 chcp 866>nul
 CLS
 
+CD ..
+
 SET BUILD_PATH=.\my-app
 
 SET GO111MODULE=auto

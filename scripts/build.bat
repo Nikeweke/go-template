@@ -2,9 +2,11 @@
 SETLOCAL
 chcp 866>nul
 
-rm -rf release/
+CD ..
 
-SET BUILD_PATH=.\release\my-app
+rm -rf build/
+
+SET BUILD_PATH=.\build\my-app
 
 SET GO111MODULE=auto
 SET GOMODCACHE=%CD%\packages
