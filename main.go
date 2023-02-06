@@ -16,8 +16,11 @@ import (
 
 
 func main() {
-	port := flag.String("port", "8000", "app port")
-	flag.Parse()
+	// port := flag.String("port", "8000", "app port"); flag.Parse() // with flags 
+	var port = "8080"
+	if len(os.Args) > 1 {
+	  port = os.Args[1]
+	}
 
 	SetupConfigFromEnv()	
 	// mysql.InitDB() // uncomment when db is exist
