@@ -21,5 +21,8 @@ go build -o %BUILD_PATH%.exe
 rem start in dev mode (default)
 %BUILD_PATH%.exe
 
-rem start with flags - port, create tax events
-@REM %BUILD_PATH%.exe -port 7000 -create-tax-events
+rem start with specified "port" if use args
+@REM %BUILD_PATH%.exe 7000
+
+rem start with specified "port" if use flags
+@REM %BUILD_PATH%.exe -port 7000
