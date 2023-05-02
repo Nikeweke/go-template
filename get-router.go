@@ -36,7 +36,7 @@ func GetRouter() *echo.Echo {
 
 	// grouped route 
 	routeGroup := r.Group("/rg") 
-	routeGroup.GET("", hd.Index2) // full route: /rg2
+	routeGroup.GET("", hd.Index2) // full route: /rg
 
 	// grouped route protected
 	routeGroup2 := r.Group("/rg2", middlewares.JWT()) 
