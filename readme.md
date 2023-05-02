@@ -14,6 +14,13 @@
 ```
 <br />
 
+### [Flags](https://pkg.go.dev/flag)
+
+```sh
+# default value = 8000
+> ./app --port 8000 
+```
+
 
 ### Golang migrate  
 

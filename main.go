@@ -16,12 +16,8 @@ import (
 
 
 func main() {
-	// port := flag.String("port", "8000", "app port"); flag.Parse() // with flags 
-	var port = "8080"
-	if len(os.Args) > 1 {
-	  port = os.Args[1]
-	}
-
+	port := flag.String("port", "8000", "app port"); flag.Parse() // with flags 
+	
 	SetupConfigFromEnv()	
 	// mysql.InitDB() // uncomment when db is exist
 
@@ -52,6 +48,6 @@ func HttpServer(r *echo.Echo, port string) {
 		"=====> HTTP-server on: \n http://localhost:%s \n http://%s:%s",
 		port, externalIp, port,
 	)
-	fmt.Println(logLine, "\n")
+	fmt.Println(logLine)
 	r.Logger.Fatal(r.Start(":" + port))
 }

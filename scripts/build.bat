@@ -8,8 +8,7 @@ rm -rf build/
 
 SET BUILD_PATH=.\build\my-app
 
-SET GO111MODULE=auto
-SET GOMODCACHE=%CD%\packages
+@REM SET GO111MODULE=auto
 SET FLAGS="-w -s"
 
 REM download all packages if project require

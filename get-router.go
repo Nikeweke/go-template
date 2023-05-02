@@ -3,9 +3,9 @@ package main
 import (
 	// "net/http"
 
-	"go-template/middlewares"
-	hd "go-template/handlers"
+	"go-template/handlers/index"
 
+	"go-template/middlewares"
 	echoMiddleware "github.com/labstack/echo/v4/middleware"
 	"github.com/labstack/echo/v4"
 )
@@ -32,15 +32,15 @@ func GetRouter() *echo.Echo {
 	r.Static("/assets", "public")
 
 	// single route 
-	r.GET("/", hd.Index)
+	r.GET("/", index.Index)
 
 	// grouped route 
 	routeGroup := r.Group("/rg") 
-	routeGroup.GET("", hd.Index2) // full route: /rg
+	routeGroup.GET("", index.Index2) // full route: /rg
 
 	// grouped route protected
 	routeGroup2 := r.Group("/rg2", middlewares.JWT()) 
-	routeGroup2.GET("/protected", hd.Index3) // full route: /rg2/protected
+	routeGroup2.GET("/protected", index.Index3) // full route: /rg2/protected
  
 	return r
 }
