@@ -18,7 +18,7 @@ import (
 func main() {
 	port := flag.String("port", "8000", "app port"); flag.Parse() // with flags 
 	
-	SetupConfigFromEnv()	
+	SetupConfigFromEnv() // comment this if not using .env
 	// mysql.InitDB() // uncomment when db is exist
 
 	router := GetRouter() // router.go

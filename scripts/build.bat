@@ -6,9 +6,7 @@ CD ..
 
 rm -rf build/
 
-SET BUILD_PATH=.\build\my-app
-
-@REM SET GO111MODULE=auto
+SET BUILD_PATH=.\build\app
 SET FLAGS="-w -s"
 
 REM download all packages if project require

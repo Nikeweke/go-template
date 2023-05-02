@@ -7,8 +7,6 @@ CD ..
 
 SET BUILD_PATH=.\my-app
 
-SET GO111MODULE=auto
-
 REM download all packages if project require
 go mod tidy
 
