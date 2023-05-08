@@ -3,7 +3,7 @@ SETLOCAL
 chcp 866>nul
 CLS
 
-CD ..
+CD ../src/
 
 SET BUILD_PATH=.\my-app
 
