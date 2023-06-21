@@ -14,9 +14,9 @@ import (
 	"github.com/kelseyhightower/envconfig"
 )
 
-
 func main() {
-	port := flag.String("port", "8000", "app port"); flag.Parse() // with flags 
+	port := flag.String("port", "8000", "app port"); 
+	flag.Parse() 
 	
 	SetupConfigFromEnv() // comment this if not using .env
 	// mysql.InitDB() // uncomment when db is exist
