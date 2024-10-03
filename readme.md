@@ -5,14 +5,14 @@
 
 ### Quick launch
 
-1. to rename your project replace "go-template" in go.mod and in all imports
+1. to rename your project replace "go-template" in go.mod and in all imports (optional)
 2. duplicate ".env.example" and rename it to ".env"
 
 ```sh
 # build and run app (auto download deps)
 > ./scripts/run.bat
 
-# bundle prod app into folder 
+# bundle prod app into folder (it can take some time at first time)
 > ./scripts/build.bat
 ```
 <br />

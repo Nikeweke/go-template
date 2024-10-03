@@ -13,15 +13,23 @@ SET FLAGS="-w -s"
 go mod tidy
 
 
-ECHO Building release...
+echo Building Go project for Linux...
 
 :: Linux Build settings
 SET GOOS=linux
 SET GOARCH=amd64
 SET CGO_ENABLED=0
 
-
+:: Build the Go binary
+:: -ldflags "-s -w" removes debug info and reduces binary size
+:: -trimpath removes local file system paths
 go build -ldflags %FLAGS% -o %APP_PATH%
-ECHO Linux app: created successfuly - (%APP_PATH%)
 
-cp .env %BUILD_PATH%\.env
+:: Check if the build was successful
+if %ERRORLEVEL% neq 0 (
+    echo Build failed!
+    exit /b %ERRORLEVEL%
+) else (
+    echo Build created successfully - (%APP_PATH%)
+    cp .env %BUILD_PATH%\.env
+)
