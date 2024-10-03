@@ -1,22 +1,17 @@
 @ECHO OFF
-SETLOCAL
-chcp 866>nul
-CLS
 
-CD ../src/
+:: %~dp0 is a special variable in batch files that expands to the directory of the currently executing script.
+CD "%~dp0..\src"
 
 SET BUILD_PATH=.\my-app
 
-REM download all packages if project require
+:: download all packages if project require
 go mod tidy
 
 ECHO Building service...
-
-rem build with flags
 go build -o %BUILD_PATH%.exe
 
-rem start in dev mode (default)
+:: start in dev mode (default)
 %BUILD_PATH%.exe
-
-rem start with specified "port" if use flags
+:: start with specified "port" if use flags
 @REM %BUILD_PATH%.exe --port 7000

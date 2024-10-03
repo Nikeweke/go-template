@@ -1,6 +1,6 @@
 module go-template
 
-go 1.17
+go 1.23.2
 
 require (
 	github.com/go-playground/validator v9.31.0+incompatible

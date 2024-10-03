@@ -1,8 +1,7 @@
 @ECHO OFF
-SETLOCAL
-chcp 866>nul
 
-CD ../src/
+:: %~dp0 is a special variable in batch files that expands to the directory of the currently executing script.
+CD "%~dp0..\src"
 
 rm -rf build/
 
@@ -10,13 +9,13 @@ SET BUILD_PATH=..\build
 SET APP_PATH=%BUILD_PATH%\app
 SET FLAGS="-w -s"
 
-REM download all packages if project require
+:: download all packages if project require
 go mod tidy
 
 
 ECHO Building release...
 
-REM Linux Build settings
+:: Linux Build settings
 SET GOOS=linux
 SET GOARCH=amd64
 SET CGO_ENABLED=0
